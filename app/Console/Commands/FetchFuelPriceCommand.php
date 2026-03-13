@@ -26,6 +26,8 @@ class FetchFuelPRiceCommand extends Command
      */
     public function handle()
     {
-        FetchFuelPrices::dispatch();
+        (new FetchFuelPrices())->handle();
+
+        $this->info('Job wurde ausgeführt');
     }
 }
