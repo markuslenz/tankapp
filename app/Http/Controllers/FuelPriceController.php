@@ -2,16 +2,20 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use Inertia\Inertia;
-use Illuminate\Http\Request;
 use App\Models\FuelPrice;
+use Illuminate\Http\Request;
+
 use Illuminate\Support\Facades\Http;
 
 class FuelPriceController extends Controller
 {
-    public function index()
+    public function index($date = null)
     {
-        $prices = FuelPrice::orderBy('created_at','asc')->latest()->take(100)->get();
+        $date = $date ? Carbon::parse($date) : Carbon::today();
+        
+        $prices = FuelPrice::whereDate('created_at', $date)->get();
 
         return Inertia::render('Prices/Index', [
             'prices' => $prices
