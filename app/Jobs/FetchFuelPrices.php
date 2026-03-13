@@ -42,7 +42,7 @@ class FetchFuelPrices implements ShouldQueue
                 'station_id'   => $station['id'],
                 'station_name' => $station['name'],
                 'brand'        => $station['brand'],
-                'type'         => env('TK_TYPE'),
+                'type'         => config('app.tk_type'),
                 'price'        => $station['price']
             ]);
         }
