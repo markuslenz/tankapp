@@ -20,7 +20,7 @@ class FuelPriceController extends Controller
 
     public function fetch()
     {
-        $response = Http::get('https://creativecommons.tankerkoenig.de/json/list.php',[
+        /*$response = Http::get('https://creativecommons.tankerkoenig.de/json/list.php',[
             'lat'    => env('TK_LAT'),
             'lng'    => env('TK_LNG'),
             'rad'    => env('TK_RAD'),
@@ -41,7 +41,7 @@ class FuelPriceController extends Controller
                 'price'        => $station['price']
             ]);
             dd($station);
-        }
+        } */
     }
 
     public function info()
