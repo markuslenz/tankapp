@@ -132,7 +132,7 @@ return [
 
     'tk_apikey' => env('TK_APIKEY'),
     'tk_lat'    => env('TK_LAT'),
-    'tk_lang'   => env('TK_LNG'),
+    'tk_lng'    => env('TK_LNG'),
     'tk_rad'    => env('TK_RAD'),
     'tk_type'   => env('TK_TYPE'),
     'tk_sort'   => env('TK_SORT'),

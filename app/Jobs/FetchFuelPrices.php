@@ -26,12 +26,12 @@ class FetchFuelPrices implements ShouldQueue
     public function handle(): void
     {
         $response = Http::get('https://creativecommons.tankerkoenig.de/json/list.php',[
-            'lat'    => env('TK_LAT'),
-            'lng'    => env('TK_LNG'),
-            'rad'    => env('TK_RAD'),
-            'sort'   => env('TK_SORT'),
-            'type'   => env('TK_TYPE'),
-            'apikey' => env('TK_APIKEY'),
+            'lat'    => config('app.tk_lat'),
+            'lng'    => config('app.tk_lng'),
+            'rad'    => config('app.tk_rad'),
+            'sort'   => config('app.tk_sort'),
+            'type'   => config('app.tk_type'),
+            'apikey' => config('app.tk_apikey'),
 
         ]);
 
