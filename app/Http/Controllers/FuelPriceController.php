@@ -11,7 +11,7 @@ class FuelPriceController extends Controller
 {
     public function index()
     {
-        $prices = FuelPrice::latest()->take(100)->get();
+        $prices = FuelPrice::orderBy('created_at','asc')->latest()->take(100)->get();
 
         return Inertia::render('Prices/Index', [
             'prices' => $prices
@@ -46,6 +46,6 @@ class FuelPriceController extends Controller
 
     public function info()
     {
-        phpinfo();
+        // phpinfo();
     }
 }
