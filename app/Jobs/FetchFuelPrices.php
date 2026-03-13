@@ -38,9 +38,6 @@ class FetchFuelPrices implements ShouldQueue
         $data = $response->json();
 
         foreach($data['stations'] as $station) {
-            $data = $response->json();
-
-        foreach($data['stations'] as $station) {
             FuelPrice::create([
                 'station_id'   => $station['id'],
                 'station_name' => $station['name'],
@@ -48,7 +45,6 @@ class FetchFuelPrices implements ShouldQueue
                 'type'         => env('TK_TYPE'),
                 'price'        => $station['price']
             ]);
-        }
         }
     }
 }
